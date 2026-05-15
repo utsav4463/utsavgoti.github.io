@@ -137,7 +137,7 @@ section{padding:80px;border-top:1px solid var(--border);position:relative;z-inde
 .gh-status-dot{width:6px;height:6px;border-radius:50%;background:var(--muted)}
 .gh-status.live .gh-status-dot{background:var(--green);animation:pulse 2s ease infinite}
 .gh-status.error .gh-status-dot{background:var(--orange)}
-.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;min-height:200px}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;min-height:200px}
 .skeleton{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:28px;position:relative;overflow:hidden}
 .skeleton::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 30%,rgba(255,255,255,.03) 50%,transparent 70%);background-size:200% 100%;animation:shimmer 1.5s infinite}
 .skel-line{height:12px;background:var(--border2);border-radius:4px;margin-bottom:12px}
@@ -371,9 +371,7 @@ footer{padding:28px 80px;border-top:1px solid var(--border);display:flex;justify
     <div class="skeleton"><div class="skel-line med"></div><div class="skel-line short" style="margin-bottom:20px"></div><div class="skel-line" style="width:80%"></div><div class="skel-line" style="width:65%"></div><div class="skel-line short"></div></div>
     <div class="skeleton"><div class="skel-line med"></div><div class="skel-line short" style="margin-bottom:20px"></div><div class="skel-line" style="width:88%"></div><div class="skel-line" style="width:72%"></div><div class="skel-line short"></div></div>
   </div>
-  <p style="font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:20px;text-align:right">
-    💡 Add a description to your GitHub repos — it shows up here automatically.
-  </p>
+
 </section>
 
 <!-- CONTACT -->
@@ -516,7 +514,7 @@ async function fetchGitHubRepos() {
     if (!res.ok) throw new Error(`GitHub API ${res.status}`);
 
     const repos    = await res.json();
-    const filtered = repos.filter(r => !HIDDEN_REPOS.includes(r.name) && !r.fork);
+    const filtered = repos.filter(r => !HIDDEN_REPOS.includes(r.name));
 
     // Update live projects count in hero
     const repoStat = document.getElementById('repo-count-stat');
