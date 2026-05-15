@@ -4,10 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Utsav Goti — Data Scientist specializing in ML, NLP, and Cloud systems. Based in Calgary, Canada.">
-<meta property="og:title" content="Utsav Goti — Data Scientist">
+<meta property="og:title" content="Utsav Goti">
 <meta property="og:description" content="Building intelligent systems with Machine Learning, NLP & Cloud.">
 <meta property="og:type" content="website">
-<title>Utsav Goti — Data Scientist</title>
+<!-- FIX 2: title is just name, no role -->
+<title>Utsav Goti</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -125,7 +126,7 @@ section{padding:80px;border-top:1px solid var(--border);position:relative;z-inde
 .skill-tag{font-family:var(--mono);font-size:11px;padding:4px 10px;border-radius:4px;background:rgba(56,189,248,.07);color:var(--blue);border:1px solid rgba(56,189,248,.15);transition:all .2s;cursor:default}
 .skill-tag:hover{background:rgba(0,255,136,.1);color:var(--green);border-color:rgba(0,255,136,.3);transform:translateY(-2px)}
 
-/* ── PROJECTS (GitHub auto-fetch) ── */
+/* PROJECTS */
 .proj-toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:32px}
 .filter-row{display:flex;gap:8px;flex-wrap:wrap}
 .ftab{font-family:var(--mono);font-size:12px;padding:6px 16px;border-radius:3px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s;letter-spacing:.5px}
@@ -136,18 +137,11 @@ section{padding:80px;border-top:1px solid var(--border);position:relative;z-inde
 .gh-status-dot{width:6px;height:6px;border-radius:50%;background:var(--muted)}
 .gh-status.live .gh-status-dot{background:var(--green);animation:pulse 2s ease infinite}
 .gh-status.error .gh-status-dot{background:var(--orange)}
-
-/* Project grid */
 .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;min-height:200px}
-
-/* Skeleton loader */
 .skeleton{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:28px;position:relative;overflow:hidden}
 .skeleton::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 30%,rgba(255,255,255,.03) 50%,transparent 70%);background-size:200% 100%;animation:shimmer 1.5s infinite}
 .skel-line{height:12px;background:var(--border2);border-radius:4px;margin-bottom:12px}
-.skel-line.short{width:40%}
-.skel-line.med{width:65%}
-
-/* Project card */
+.skel-line.short{width:40%}.skel-line.med{width:65%}
 .proj-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:28px;transition:all .3s;position:relative;overflow:hidden;display:flex;flex-direction:column}
 .proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--green),transparent);transform:scaleX(0);transition:transform .4s;transform-origin:left}
 .proj-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,255,136,.03),transparent);opacity:0;transition:opacity .3s}
@@ -159,7 +153,6 @@ section{padding:80px;border-top:1px solid var(--border);position:relative;z-inde
 .proj-icon{width:42px;height:42px;border-radius:8px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--green);transition:all .2s;flex-shrink:0}
 .proj-card:hover .proj-icon{background:rgba(0,255,136,.1);border-color:rgba(0,255,136,.3);transform:rotate(-5deg)}
 .proj-meta{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
-.proj-tag{font-family:var(--mono);font-size:10px;padding:3px 8px;border-radius:3px;background:rgba(56,189,248,.1);color:var(--blue);border:1px solid rgba(56,189,248,.2)}
 .proj-lang-tag{font-family:var(--mono);font-size:10px;padding:3px 8px;border-radius:3px;background:rgba(167,139,250,.1);color:var(--purple);border:1px solid rgba(167,139,250,.2)}
 .proj-name{font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-.3px}
 .proj-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:20px;flex:1}
@@ -168,18 +161,16 @@ section{padding:80px;border-top:1px solid var(--border);position:relative;z-inde
 .proj-stat{font-family:var(--mono);font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px}
 .proj-stat i{font-size:10px}
 .proj-links{display:flex;gap:12px}
-.proj-link{font-family:var(--mono);font-size:12px;color:var(--green);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap .2s,color .2s}
+/* FIX 4: ensure links are always clickable */
+.proj-link{font-family:var(--mono);font-size:12px;color:var(--green);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap .2s,color .2s;position:relative;z-index:10}
 .proj-link:hover{gap:9px}
 .proj-link::after{content:'→'}
-.proj-link-ext{font-family:var(--mono);font-size:12px;color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:color .2s}
+.proj-link-ext{font-family:var(--mono);font-size:12px;color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:color .2s;position:relative;z-index:10}
 .proj-link-ext:hover{color:var(--blue)}
-
-/* No repos / error state */
 .proj-empty{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px;text-align:center;gap:12px;color:var(--muted);font-family:var(--mono);font-size:13px}
 .proj-empty i{font-size:32px;color:var(--border2)}
-
-/* Language color dots */
 .lang-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px}
+.ai-generating{color:var(--border2);font-style:italic}
 
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
@@ -211,7 +202,6 @@ footer{padding:28px 80px;border-top:1px solid var(--border);display:flex;justify
 @keyframes heartbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.3)}28%{transform:scale(1)}42%{transform:scale(1.3)}70%{transform:scale(1)}}
 @keyframes gridPulse{0%,100%{opacity:.03}50%{opacity:.06}}
 @keyframes filterIn{from{opacity:0;transform:scale(.95) translateY(8px)}to{opacity:1;transform:scale(1) translateY(0)}}
-@keyframes filterOut{from{opacity:1}to{opacity:0}}
 
 /* RESPONSIVE */
 @media(max-width:960px){
@@ -356,14 +346,13 @@ footer{padding:28px 80px;border-top:1px solid var(--border);display:flex;justify
   </div>
 </section>
 
-<!-- PROJECTS — GitHub auto-fetch -->
+<!-- PROJECTS -->
 <section id="projects">
   <div class="sec-header reveal">
     <span class="sec-num">03</span>
     <h2 class="sec-title">projects</h2>
     <div class="sec-line"></div>
   </div>
-
   <div class="proj-toolbar reveal">
     <div class="filter-row" id="filter-row">
       <button class="ftab active" data-filter="all">all</button>
@@ -376,40 +365,13 @@ footer{padding:28px 80px;border-top:1px solid var(--border);display:flex;justify
       <span id="gh-status-text">fetching from GitHub...</span>
     </div>
   </div>
-
   <div class="proj-grid" id="proj-grid">
-    <!-- Skeleton loaders while fetching -->
-    <div class="skeleton" id="skel1">
-      <div class="skel-line med"></div>
-      <div class="skel-line short" style="margin-bottom:20px"></div>
-      <div class="skel-line" style="width:90%"></div>
-      <div class="skel-line" style="width:75%"></div>
-      <div class="skel-line short"></div>
-    </div>
-    <div class="skeleton" id="skel2">
-      <div class="skel-line med"></div>
-      <div class="skel-line short" style="margin-bottom:20px"></div>
-      <div class="skel-line" style="width:85%"></div>
-      <div class="skel-line" style="width:70%"></div>
-      <div class="skel-line short"></div>
-    </div>
-    <div class="skeleton" id="skel3">
-      <div class="skel-line med"></div>
-      <div class="skel-line short" style="margin-bottom:20px"></div>
-      <div class="skel-line" style="width:80%"></div>
-      <div class="skel-line" style="width:65%"></div>
-      <div class="skel-line short"></div>
-    </div>
-    <div class="skeleton" id="skel4">
-      <div class="skel-line med"></div>
-      <div class="skel-line short" style="margin-bottom:20px"></div>
-      <div class="skel-line" style="width:88%"></div>
-      <div class="skel-line" style="width:72%"></div>
-      <div class="skel-line short"></div>
-    </div>
+    <div class="skeleton"><div class="skel-line med"></div><div class="skel-line short" style="margin-bottom:20px"></div><div class="skel-line" style="width:90%"></div><div class="skel-line" style="width:75%"></div><div class="skel-line short"></div></div>
+    <div class="skeleton"><div class="skel-line med"></div><div class="skel-line short" style="margin-bottom:20px"></div><div class="skel-line" style="width:85%"></div><div class="skel-line" style="width:70%"></div><div class="skel-line short"></div></div>
+    <div class="skeleton"><div class="skel-line med"></div><div class="skel-line short" style="margin-bottom:20px"></div><div class="skel-line" style="width:80%"></div><div class="skel-line" style="width:65%"></div><div class="skel-line short"></div></div>
+    <div class="skeleton"><div class="skel-line med"></div><div class="skel-line short" style="margin-bottom:20px"></div><div class="skel-line" style="width:88%"></div><div class="skel-line" style="width:72%"></div><div class="skel-line short"></div></div>
   </div>
-
-  <p style="font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:20px;text-align:right" id="gh-tip">
+  <p style="font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:20px;text-align:right">
     💡 Add a description to your GitHub repos — it shows up here automatically.
   </p>
 </section>
@@ -474,146 +436,188 @@ footer{padding:28px 80px;border-top:1px solid var(--border);display:flex;justify
 
 <script>
 // ═══════════════════════════════════════════════════════════
-// CONFIGURATION — change these to customise behaviour
+// CONFIG
 // ═══════════════════════════════════════════════════════════
 const GITHUB_USERNAME = 'utsav4463';
+const HIDDEN_REPOS    = ['utsav4463.github.io','utsavgoti.github.io'];
 
-// Repos to hide (forks, config repos, etc.)
-const HIDDEN_REPOS = ['utsav4463.github.io'];
-
-// Map repo names → custom icons (Font Awesome class strings)
 const REPO_ICONS = {
-  default:    'fa-solid fa-code-branch',
-  python:     'fa-brands fa-python',
-  jupyter:    'fa-solid fa-chart-line',
-  aws:        'fa-brands fa-aws',
-  docker:     'fa-brands fa-docker',
-  web:        'fa-solid fa-globe',
-  nlp:        'fa-solid fa-robot',
-  ml:         'fa-solid fa-brain',
-  dashboard:  'fa-solid fa-chart-bar',
-  api:        'fa-solid fa-plug',
-  data:       'fa-solid fa-database',
+  default:'fa-solid fa-code-branch', python:'fa-brands fa-python',
+  jupyter:'fa-solid fa-chart-line',  aws:'fa-brands fa-aws',
+  docker:'fa-brands fa-docker',      web:'fa-solid fa-globe',
+  nlp:'fa-solid fa-robot',           ml:'fa-solid fa-brain',
+  dashboard:'fa-solid fa-chart-bar', api:'fa-solid fa-plug',
+  data:'fa-solid fa-database',
 };
 
-// Language → color map
 const LANG_COLORS = {
-  'Python':     '#3572A5',
-  'Jupyter Notebook': '#DA5B0B',
-  'JavaScript': '#F1E05A',
-  'TypeScript': '#2B7489',
-  'HTML':       '#E34C26',
-  'CSS':        '#563D7C',
-  'Shell':      '#89E051',
-  'R':          '#198CE7',
-  'SQL':        '#e38c00',
+  'Python':'#3572A5','Jupyter Notebook':'#DA5B0B','JavaScript':'#F1E05A',
+  'TypeScript':'#2B7489','HTML':'#E34C26','CSS':'#563D7C',
+  'Shell':'#89E051','R':'#198CE7','SQL':'#e38c00',
 };
+
+// ═══════════════════════════════════════════════════════════
+// FIX 1: countUp — step variable was missing, causing JS crash
+// ═══════════════════════════════════════════════════════════
+function countUp(el, target, duration, plus = true) {
+  if(!el || target === 0) return;
+  let start = 0;
+  const step   = target / (duration / 16); // ← was missing before
+  const suffix = plus ? '+' : '';
+  const timer  = setInterval(() => {
+    start += step;
+    if (start >= target) {
+      el.textContent = target + suffix;
+      clearInterval(timer);
+    } else {
+      el.textContent = Math.floor(start) + suffix;
+    }
+  }, 16);
+}
+
+// ═══════════════════════════════════════════════════════════
+// FIX 3: AI auto-description for repos with no description
+// ═══════════════════════════════════════════════════════════
+async function generateDescription(repo) {
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 80,
+        messages: [{
+          role: 'user',
+          content: `Write ONE short sentence (max 18 words) describing what this GitHub repo likely does.
+Repo name: "${repo.name}"
+Language: "${repo.language || 'unknown'}"
+Topics: ${repo.topics?.join(', ') || 'none'}
+Reply with just the sentence, nothing else.`
+        }]
+      })
+    });
+    const data = await res.json();
+    return data?.content?.[0]?.text?.trim() || null;
+  } catch {
+    return null;
+  }
+}
 
 // ═══════════════════════════════════════════════════════════
 // GITHUB FETCH
 // ═══════════════════════════════════════════════════════════
-async function fetchGitHubRepos(){
-  const grid   = document.getElementById('proj-grid');
-  const status = document.getElementById('gh-status');
-  const statusTxt = document.getElementById('gh-status-text');
+async function fetchGitHubRepos() {
+  const grid = document.getElementById('proj-grid');
 
   try {
-    // Fetch up to 100 public repos, sorted by most recently updated
     const res = await fetch(
       `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated&type=public`
     );
+    if (!res.ok) throw new Error(`GitHub API ${res.status}`);
 
-    if(!res.ok) throw new Error(`GitHub API ${res.status}`);
+    const repos    = await res.json();
+    const filtered = repos.filter(r => !HIDDEN_REPOS.includes(r.name) && !r.fork);
 
-    const repos = await res.json();
-
-    // Filter: skip hidden, skip forks (optional — remove fork check to show forks)
-    const filtered = repos.filter(r =>
-      !HIDDEN_REPOS.includes(r.name) && !r.fork
-    );
-
-    // Update hero projects stat with count-up animation
+    // Update live projects count in hero
     const repoStat = document.getElementById('repo-count-stat');
-    if(repoStat) countUp(repoStat, filtered.length, 1200, true);
+    if (repoStat) countUp(repoStat, filtered.length, 1200, true);
 
     // Clear skeletons
     grid.innerHTML = '';
 
-    if(filtered.length === 0){
+    if (filtered.length === 0) {
       grid.innerHTML = `
         <div class="proj-empty">
           <i class="fa-brands fa-github"></i>
           <span>No public repositories found.</span>
-          <span style="color:var(--border2)">Create a repo on GitHub and it'll appear here.</span>
+          <span style="color:var(--border2)">Create a repo on GitHub and it will appear here.</span>
         </div>`;
-      setStatus('live', `0 repos loaded`);
+      setStatus('live', '0 repos loaded');
       return;
     }
 
-    // Render cards
+    // Build cards — repos missing descriptions get a placeholder first
+    const needsDesc = [];
     filtered.forEach((repo, i) => {
       const card = buildCard(repo, i);
       grid.appendChild(card);
-      // Staggered entrance
       setTimeout(() => card.classList.add('visible'), 60 * i);
+      if (!repo.description) needsDesc.push({ card, repo });
     });
 
-    // Apply current filter
     applyFilter(document.querySelector('.ftab.active')?.dataset.filter || 'all');
-
     setStatus('live', `${filtered.length} repos · live from GitHub`);
 
-  } catch(err) {
-    // Remove skeletons, show error
+    // FIX 3: Fill AI descriptions for repos that have none
+    if (needsDesc.length > 0) {
+      setStatus('live', `${filtered.length} repos · generating descriptions...`);
+      await Promise.all(needsDesc.map(async ({ card, repo }) => {
+        const descEl = card.querySelector('.proj-desc');
+        if (!descEl) return;
+        const text = await generateDescription(repo);
+        if (text) {
+          descEl.textContent = text;
+        } else {
+          descEl.textContent = `A ${repo.language || 'code'} project — add a description on GitHub for more detail.`;
+        }
+      }));
+      setStatus('live', `${filtered.length} repos · live from GitHub`);
+    }
+
+  } catch (err) {
     grid.innerHTML = `
       <div class="proj-empty">
         <i class="fa-solid fa-circle-exclamation" style="color:var(--orange)"></i>
         <span style="color:var(--orange)">Couldn't reach GitHub API</span>
-        <span style="color:var(--border2);font-size:11px">${err.message} — check your connection or try again later.</span>
+        <span style="color:var(--border2);font-size:11px">${err.message}</span>
       </div>`;
     setStatus('error', 'API error');
   }
 }
 
-function setStatus(type, text){
+function setStatus(type, text) {
   const el = document.getElementById('gh-status');
   el.className = 'gh-status ' + type;
   document.getElementById('gh-status-text').textContent = text;
 }
 
-function pickIcon(repo){
-  const name = (repo.name + ' ' + (repo.description || '') + ' ' + (repo.language || '')).toLowerCase();
-  if(name.includes('aws') || name.includes('lambda') || name.includes('kinesis')) return REPO_ICONS.aws;
-  if(name.includes('nlp') || name.includes('bert') || name.includes('sentiment') || name.includes('robot')) return REPO_ICONS.nlp;
-  if(name.includes('ml') || name.includes('predict') || name.includes('model') || name.includes('train')) return REPO_ICONS.ml;
-  if(name.includes('dashboard') || name.includes('chart') || name.includes('visual')) return REPO_ICONS.dashboard;
-  if(name.includes('api') || name.includes('fastapi') || name.includes('flask')) return REPO_ICONS.api;
-  if(name.includes('docker')) return REPO_ICONS.docker;
-  if(name.includes('data') || name.includes('pipeline') || name.includes('etl')) return REPO_ICONS.data;
-  if(repo.language === 'Jupyter Notebook') return REPO_ICONS.jupyter;
-  if(repo.language === 'Python') return REPO_ICONS.python;
+function pickIcon(repo) {
+  const n = (repo.name + ' ' + (repo.description || '') + ' ' + (repo.language || '')).toLowerCase();
+  if (n.includes('aws') || n.includes('lambda') || n.includes('kinesis')) return REPO_ICONS.aws;
+  if (n.includes('nlp') || n.includes('bert') || n.includes('sentiment')) return REPO_ICONS.nlp;
+  if (n.includes('ml') || n.includes('predict') || n.includes('model') || n.includes('train')) return REPO_ICONS.ml;
+  if (n.includes('dashboard') || n.includes('chart') || n.includes('visual')) return REPO_ICONS.dashboard;
+  if (n.includes('api') || n.includes('fastapi') || n.includes('flask')) return REPO_ICONS.api;
+  if (n.includes('docker')) return REPO_ICONS.docker;
+  if (n.includes('data') || n.includes('pipeline') || n.includes('etl')) return REPO_ICONS.data;
+  if (repo.language === 'Jupyter Notebook') return REPO_ICONS.jupyter;
+  if (repo.language === 'Python') return REPO_ICONS.python;
   return REPO_ICONS.default;
 }
 
-function langFilter(repo){
+function langFilter(repo) {
   const lang = (repo.language || '').toLowerCase().replace(' ', '-');
-  if(lang === 'python') return 'python';
-  if(lang === 'jupyter-notebook' || lang === 'jupyter notebook') return 'jupyter';
-  if(lang) return 'other';
-  return 'other';
+  if (lang === 'python') return 'python';
+  if (lang === 'jupyter-notebook' || lang === 'jupyter notebook') return 'jupyter';
+  return lang ? 'other' : 'other';
 }
 
-function buildCard(repo, idx){
-  const card = document.createElement('div');
+function formatName(name) {
+  return name.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+// FIX 4: proj-card has z-index:0 on ::after pseudo so links sit above it
+function buildCard(repo, idx) {
+  const card        = document.createElement('div');
   const filterClass = langFilter(repo);
-  card.className = `proj-card ${filterClass} reveal`;
+  card.className    = `proj-card ${filterClass} reveal`;
   card.style.transitionDelay = `${idx * 0.05}s`;
 
-  const icon  = pickIcon(repo);
-  const lang  = repo.language || 'Unknown';
-  const color = LANG_COLORS[lang] || '#4d6680';
-  const desc  = repo.description || 'No description provided — add one on GitHub!';
-  const updated = new Date(repo.updated_at).toLocaleDateString('en-CA', {year:'numeric',month:'short'});
+  const icon    = pickIcon(repo);
+  const lang    = repo.language || 'Unknown';
+  const color   = LANG_COLORS[lang] || '#4d6680';
+  const desc    = repo.description || '<span class="ai-generating">generating description...</span>';
+  const updated = new Date(repo.updated_at).toLocaleDateString('en-CA', { year: 'numeric', month: 'short' });
 
   card.innerHTML = `
     <div class="proj-top">
@@ -634,24 +638,24 @@ function buildCard(repo, idx){
       </div>
       <div class="proj-links">
         <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="proj-link">GitHub</a>
-        ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" rel="noopener noreferrer" class="proj-link-ext"><i class="fa-solid fa-arrow-up-right-from-square" style="font-size:10px"></i> Live</a>` : ''}
+        ${repo.homepage
+          ? `<a href="${repo.homepage}" target="_blank" rel="noopener noreferrer" class="proj-link-ext">
+               <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:10px"></i> Live
+             </a>`
+          : ''}
       </div>
     </div>`;
 
   return card;
 }
 
-function formatName(name){
-  return name.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-}
-
 // ═══════════════════════════════════════════════════════════
 // FILTER
 // ═══════════════════════════════════════════════════════════
-function applyFilter(type){
+function applyFilter(type) {
   document.querySelectorAll('.proj-card').forEach(card => {
     const show = type === 'all' || card.classList.contains(type);
-    if(show){
+    if (show) {
       card.classList.remove('hidden');
       card.style.animation = 'filterIn .3s ease forwards';
     } else {
@@ -661,9 +665,9 @@ function applyFilter(type){
   });
 }
 
-document.getElementById('filter-row').addEventListener('click', function(e){
+document.getElementById('filter-row').addEventListener('click', function(e) {
   const btn = e.target.closest('.ftab');
-  if(!btn) return;
+  if (!btn) return;
   document.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   applyFilter(btn.dataset.filter);
@@ -679,20 +683,20 @@ document.addEventListener('mousemove', e => {
 });
 
 // ═══════════════════════════════════════════════════════════
-// PARTICLE CANVAS
+// PARTICLES
 // ═══════════════════════════════════════════════════════════
-(function(){
+(function () {
   const canvas = document.getElementById('particles');
-  const ctx = canvas.getContext('2d');
+  const ctx    = canvas.getContext('2d');
   let W, H;
-  const COUNT = 50;
+  const COUNT     = 50;
   const particles = [];
 
-  function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+  function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
   resize();
   window.addEventListener('resize', resize);
 
-  for(let i = 0; i < COUNT; i++){
+  for (let i = 0; i < COUNT; i++) {
     particles.push({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
@@ -703,17 +707,17 @@ document.addEventListener('mousemove', e => {
     });
   }
 
-  function draw(){
+  function draw() {
     ctx.clearRect(0, 0, W, H);
-    for(let i = 0; i < particles.length; i++){
-      for(let j = i+1; j < particles.length; j++){
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
         const dy = particles[i].y - particles[j].y;
-        const d  = Math.sqrt(dx*dx + dy*dy);
-        if(d < 120){
+        const d  = Math.sqrt(dx * dx + dy * dy);
+        if (d < 120) {
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(0,255,136,${.06*(1-d/120)})`;
-          ctx.lineWidth = .5;
+          ctx.strokeStyle = `rgba(0,255,136,${.06 * (1 - d / 120)})`;
+          ctx.lineWidth   = .5;
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
           ctx.stroke();
@@ -722,12 +726,12 @@ document.addEventListener('mousemove', e => {
     }
     particles.forEach(p => {
       ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(0,255,136,${p.alpha})`;
       ctx.fill();
       p.x += p.vx; p.y += p.vy;
-      if(p.x < 0 || p.x > W) p.vx *= -1;
-      if(p.y < 0 || p.y > H) p.vy *= -1;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
     });
     requestAnimationFrame(draw);
   }
@@ -737,13 +741,13 @@ document.addEventListener('mousemove', e => {
 // ═══════════════════════════════════════════════════════════
 // NAV
 // ═══════════════════════════════════════════════════════════
-const navbar  = document.getElementById('navbar');
+const navbar   = document.getElementById('navbar');
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 10);
   let current = '';
-  sections.forEach(s => { if(window.scrollY >= s.offsetTop - 80) current = s.id; });
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
   navLinks.forEach(a => a.classList.toggle('active-link', a.getAttribute('href') === '#' + current));
 }, { passive: true });
 
@@ -761,9 +765,9 @@ mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => 
 // ═══════════════════════════════════════════════════════════
 // CV DOWNLOAD
 // ═══════════════════════════════════════════════════════════
-document.getElementById('cv-btn').addEventListener('click', function(e){
+document.getElementById('cv-btn').addEventListener('click', function(e) {
   fetch('assets/resume.pdf', { method: 'HEAD' })
-    .then(res => { if(!res.ok) throw new Error(); })
+    .then(res => { if (!res.ok) throw new Error(); })
     .catch(() => {
       e.preventDefault();
       const notice = document.getElementById('cv-notice');
@@ -784,39 +788,32 @@ scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 's
 // ═══════════════════════════════════════════════════════════
 const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 const observer  = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
 }, { threshold: 0.12 });
 revealEls.forEach(el => observer.observe(el));
 
 // ═══════════════════════════════════════════════════════════
-// COUNT-UP
+// HERO COUNT-UP (years exp + technologies)
 // ═══════════════════════════════════════════════════════════
-function countUp(el, target, duration, plus = true){
-  let start = 0;
-  const suffix = plus ? "+" : "";
-  const timer = setInterval(() => {
-    start += step;
-    if(start >= target){ el.textContent = target + suffix; clearInterval(timer); }
-    else el.textContent = Math.floor(start) + suffix;
-  }, 16);
-}
 const statsObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if(e.isIntersecting){
-      document.querySelectorAll('.hero-stat .num[data-count]').forEach(el => countUp(el, parseInt(el.dataset.count), 1200));
+    if (e.isIntersecting) {
+      document.querySelectorAll('.hero-stat .num[data-count]').forEach(el =>
+        countUp(el, parseInt(el.dataset.count), 1200, true)
+      );
       statsObs.disconnect();
     }
   });
 }, { threshold: 0.5 });
 const heroStats = document.querySelector('.hero-stats');
-if(heroStats) statsObs.observe(heroStats);
+if (heroStats) statsObs.observe(heroStats);
 
 // ═══════════════════════════════════════════════════════════
-// FOOTER YEAR + BOOT
+// FOOTER + BOOT
 // ═══════════════════════════════════════════════════════════
 document.getElementById('footer-year').textContent = '© ' + new Date().getFullYear();
-
-// Kick off GitHub fetch
 fetchGitHubRepos();
 </script>
 </body>
