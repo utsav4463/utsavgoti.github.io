@@ -193,6 +193,38 @@ section{padding:80px;border-top:1px solid var(--border);position:relative;z-inde
 footer{padding:28px 80px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:12px;color:var(--muted);position:relative;z-index:2}
 .footer-heart{color:var(--green);display:inline-block;animation:heartbeat 1.5s ease infinite}
 
+/* EXPERIENCE */
+.exp-list{display:flex;flex-direction:column;gap:0}
+.exp-item{display:grid;grid-template-columns:32px 1fr;gap:0 24px}
+.exp-left{display:flex;flex-direction:column;align-items:center;padding-top:4px}
+.exp-dot{width:12px;height:12px;border-radius:50%;background:var(--green);border:2px solid var(--bg);flex-shrink:0;box-shadow:0 0 10px rgba(0,255,136,.4)}
+.exp-line{width:2px;flex:1;background:linear-gradient(to bottom,var(--green),var(--border));margin-top:8px;min-height:40px}
+.exp-right{padding-bottom:48px}
+.exp-item:last-child .exp-right{padding-bottom:0}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.exp-role{font-size:17px;font-weight:700;color:#fff;letter-spacing:-.3px}
+.exp-company{font-family:var(--mono);font-size:12px;color:var(--green);margin-top:4px;display:flex;align-items:center;gap:6px}
+.exp-date{font-family:var(--mono);font-size:11px;color:var(--muted);background:var(--card);border:1px solid var(--border);padding:4px 10px;border-radius:3px;white-space:nowrap}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.exp-bullets li{font-size:13px;color:var(--muted);line-height:1.7;padding-left:16px;position:relative}
+.exp-bullets li::before{content:"▸";position:absolute;left:0;color:var(--green);font-size:10px;top:3px}
+.exp-bullets .hl{color:var(--text);font-weight:500}
+.exp-tags{display:flex;flex-wrap:wrap;gap:6px}
+.exp-tag{font-family:var(--mono);font-size:10px;padding:3px 8px;border-radius:3px;background:rgba(0,255,136,.07);color:var(--green);border:1px solid rgba(0,255,136,.15)}
+/* EDUCATION */
+.edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.edu-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:28px;display:flex;gap:20px;align-items:flex-start;transition:border-color .25s,transform .25s,box-shadow .25s;position:relative;overflow:hidden}
+.edu-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--green),var(--blue));transform:scaleY(0);transition:transform .3s;transform-origin:bottom}
+.edu-card:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.edu-card:hover::before{transform:scaleY(1)}
+.edu-icon{width:44px;height:44px;border-radius:8px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--green);flex-shrink:0;transition:all .2s}
+.edu-card:hover .edu-icon{background:rgba(0,255,136,.1);border-color:rgba(0,255,136,.3)}
+.edu-degree{font-size:16px;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:-.2px}
+.edu-school{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:5px}
+.edu-meta{display:flex;gap:16px;flex-wrap:wrap}
+.edu-date,.edu-gpa{font-family:var(--mono);font-size:11px;display:flex;align-items:center;gap:5px}
+.edu-date{color:var(--muted)}
+.edu-gpa{color:var(--green)}
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeDown{from{opacity:0;transform:translate(-50%,-10px)}to{opacity:1;transform:translate(-50%,0)}}
@@ -240,6 +272,8 @@ footer{padding:28px 80px;border-top:1px solid var(--border);display:flex;justify
   <div class="nav-links">
     <a href="#about">about</a>
     <a href="#skills">skills</a>
+    <a href="#experience">experience</a>
+    <a href="#education">education</a>
     <a href="#projects">projects</a>
     <a href="#contact">contact</a>
   </div>
@@ -254,6 +288,8 @@ footer{padding:28px 80px;border-top:1px solid var(--border);display:flex;justify
 <div class="mobile-menu" id="mobile-menu">
   <a href="#about">about</a>
   <a href="#skills">skills</a>
+  <a href="#experience">experience</a>
+  <a href="#education">education</a>
   <a href="#projects">projects</a>
   <a href="#contact">contact</a>
 </div>
@@ -271,9 +307,9 @@ footer{padding:28px 80px;border-top:1px solid var(--border);display:flex;justify
     <a href="#contact" class="btn btn-ghost"><i class="fa-solid fa-paper-plane"></i> get_in_touch()</a>
   </div>
   <div class="hero-stats">
-    <div class="hero-stat"><div class="num" data-count="1">0</div><div class="lbl">years exp</div></div>
+    <div class="hero-stat"><div class="num" data-count="3">0</div><div class="lbl">years exp</div></div>
     <div class="hero-stat"><div class="num" id="repo-count-stat">0</div><div class="lbl">projects</div></div>
-    <div class="hero-stat"><div class="num" data-count="10">0</div><div class="lbl">technologies</div></div>
+    <div class="hero-stat"><div class="num" data-count="15">0</div><div class="lbl">technologies</div></div>
     <div class="hero-stat"><div class="num">∞</div><div class="lbl">coffee / day</div></div>
   </div>
 </section>
@@ -287,9 +323,9 @@ footer{padding:28px 80px;border-top:1px solid var(--border);display:flex;justify
   </div>
   <div class="about-grid">
     <div class="about-text reveal-left">
-      <p>I'm a <span class="hl">Data Scientist</span> and recent graduate passionate about turning raw data into meaningful insights. I enjoy building <span class="hl2">ML models</span>, exploring NLP problems, and learning how to bring solutions to life in the cloud.</p>
-      <p>My projects span <span class="hl">sentiment analysis</span>, time-series forecasting, and cloud data pipelines — built to learn, grow, and solve real problems. I care about writing clean code and understanding the "why" behind every model.</p>
-      <p>When I'm not training models, I'm exploring new datasets, reading ML papers, or working on my next side project.</p>
+      <p>I'm a <span class="hl">Data Scientist & Analyst</span> with 3+ years of experience turning complex data into actionable insights. Currently completing my <span class="hl2">Master of Data Science</span> at the University of Calgary (GPA 3.92).</p>
+      <p>At <span class="hl">XM Technologies</span>, I built Power BI dashboards, designed star-schema data models, and automated reporting pipelines with Python and SQL — replacing manual workflows and enabling self-service analytics across teams.</p>
+      <p>My focus is on <span class="hl">ML, NLP, and Cloud</span> — from LSTM-based trading systems and fraud detection to Azure-integrated analytics pipelines. I care about clean code, interpretable models, and solutions that actually scale.</p>
     </div>
     <div class="terminal reveal-right">
       <div class="terminal-bar">
@@ -299,12 +335,13 @@ footer{padding:28px 80px;border-top:1px solid var(--border);display:flex;justify
       <div class="terminal-body">
         <div class="t-line"><span class="t-prompt">❯</span>&nbsp;<span class="t-cmd">cat</span>&nbsp;<span style="color:var(--text)">profile.json</span></div>
         <div class="t-line"><span class="t-key">"name"</span><span style="color:var(--muted)">:</span>&nbsp;<span class="t-str">"Utsav Goti"</span><span style="color:var(--muted)">,</span></div>
-        <div class="t-line"><span class="t-key">"role"</span><span style="color:var(--muted)">:</span>&nbsp;<span class="t-str">"Data Scientist"</span><span style="color:var(--muted)">,</span></div>
+        <div class="t-line"><span class="t-key">"role"</span><span style="color:var(--muted)">:</span>&nbsp;<span class="t-str">"Data Scientist & Analyst"</span><span style="color:var(--muted)">,</span></div>
+        <div class="t-line"><span class="t-key">"education"</span><span style="color:var(--muted)">:</span>&nbsp;<span class="t-str">"M.Sc. Data Science · UCalgary"</span><span style="color:var(--muted)">,</span></div>
+        <div class="t-line"><span class="t-key">"experience"</span><span style="color:var(--muted)">:</span>&nbsp;<span class="t-str">"3+ years"</span><span style="color:var(--muted)">,</span></div>
         <div class="t-line"><span class="t-key">"location"</span><span style="color:var(--muted)">:</span>&nbsp;<span class="t-str">"Calgary, CA"</span><span style="color:var(--muted)">,</span></div>
-        <div class="t-line"><span class="t-key">"focus"</span><span style="color:var(--muted)">:</span>&nbsp;<span class="t-str">"ML · NLP · Cloud"</span><span style="color:var(--muted)">,</span></div>
-        <div class="t-line"><span class="t-key">"status"</span><span style="color:var(--muted)">:</span>&nbsp;<span class="t-str">"open to opportunities"</span><span style="color:var(--muted)">,</span></div>
+        <div class="t-line"><span class="t-key">"focus"</span><span style="color:var(--muted)">:</span>&nbsp;<span class="t-str">"ML · NLP · Cloud · BI"</span><span style="color:var(--muted)">,</span></div>
         <div class="t-line"><span class="t-key">"available"</span><span style="color:var(--muted)">:</span>&nbsp;<span class="t-val">true</span></div>
-        <div class="t-line" style="margin-top:8px"><span class="t-comment"># let's build something great</span></div>
+        <div class="t-line" style="margin-top:8px"><span class="t-comment"># open to full-time roles</span></div>
         <div class="t-line"><span class="t-prompt">❯</span>&nbsp;<span class="t-cursor"></span></div>
       </div>
     </div>
@@ -321,35 +358,130 @@ footer{padding:28px 80px;border-top:1px solid var(--border);display:flex;justify
   <div class="skills-categories">
     <div class="skill-cat reveal" style="transition-delay:.05s">
       <div class="skill-cat-title">// Languages</div>
-      <div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">Bash</span></div>
+      <div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">R</span></div>
     </div>
     <div class="skill-cat reveal" style="transition-delay:.1s">
       <div class="skill-cat-title">// ML / AI</div>
-      <div class="skill-tags"><span class="skill-tag">scikit-learn</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">PyTorch</span><span class="skill-tag">XGBoost</span><span class="skill-tag">LSTM</span></div>
+      <div class="skill-tags"><span class="skill-tag">LSTM</span><span class="skill-tag">XGBoost</span><span class="skill-tag">Regression</span><span class="skill-tag">Classification</span><span class="skill-tag">Generative AI</span></div>
     </div>
     <div class="skill-cat reveal" style="transition-delay:.15s">
       <div class="skill-cat-title">// NLP</div>
-      <div class="skill-tags"><span class="skill-tag">HuggingFace</span><span class="skill-tag">BERT</span><span class="skill-tag">NLTK</span><span class="skill-tag">spaCy</span></div>
+      <div class="skill-tags"><span class="skill-tag">FinBERT</span><span class="skill-tag">NLP Pipelines</span><span class="skill-tag">Sentiment Analysis</span></div>
     </div>
     <div class="skill-cat reveal" style="transition-delay:.2s">
       <div class="skill-cat-title">// Cloud & Infra</div>
-      <div class="skill-tags"><span class="skill-tag">AWS</span><span class="skill-tag">S3</span><span class="skill-tag">Lambda</span><span class="skill-tag">Kinesis</span><span class="skill-tag">Docker</span></div>
+      <div class="skill-tags"><span class="skill-tag">AWS EC2</span><span class="skill-tag">AWS S3</span><span class="skill-tag">AWS RDS</span><span class="skill-tag">Azure Data Factory</span><span class="skill-tag">Azure Blob</span><span class="skill-tag">Databricks</span></div>
     </div>
     <div class="skill-cat reveal" style="transition-delay:.25s">
-      <div class="skill-cat-title">// Data & Viz</div>
-      <div class="skill-tags"><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">Plotly</span><span class="skill-tag">Streamlit</span></div>
+      <div class="skill-cat-title">// Data & Analytics</div>
+      <div class="skill-tags"><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">EDA</span><span class="skill-tag">Statistical Analysis</span><span class="skill-tag">Power BI</span><span class="skill-tag">Tableau</span></div>
     </div>
     <div class="skill-cat reveal" style="transition-delay:.3s">
       <div class="skill-cat-title">// Tools</div>
-      <div class="skill-tags"><span class="skill-tag">FastAPI</span><span class="skill-tag">Git</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">Jupyter</span></div>
+      <div class="skill-tags"><span class="skill-tag">Git</span><span class="skill-tag">Jupyter</span><span class="skill-tag">VS Code</span><span class="skill-tag">DAX</span><span class="skill-tag">Power Query</span></div>
     </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-header reveal">
+    <span class="sec-num">03</span>
+    <h2 class="sec-title">experience</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="exp-list">
+
+    <div class="exp-item reveal">
+      <div class="exp-left">
+        <div class="exp-dot"></div>
+        <div class="exp-line"></div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Junior Data Analyst</div>
+            <div class="exp-company"><i class="fa-solid fa-building"></i> XM Technologies · Surat, India</div>
+          </div>
+          <div class="exp-date">Jul 2022 — Jul 2024</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Built interactive <span class="hl">Power BI dashboards</span> and semantic models, replacing manual Excel-based reporting with self-service analytics.</li>
+          <li>Designed <span class="hl">star-schema datasets</span> with DAX measures and Power Query transformations for accurate KPI reporting.</li>
+          <li>Integrated and validated data from SQL databases and flat files, ensuring high data quality through cleansing and discrepancy analysis.</li>
+          <li>Automated data processing and reporting workflows using <span class="hl">Python and SQL</span>, improving efficiency and supporting scalable pipelines.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Power BI</span><span class="exp-tag">Python</span><span class="exp-tag">SQL</span><span class="exp-tag">DAX</span><span class="exp-tag">Power Query</span><span class="exp-tag">Star Schema</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item reveal" style="transition-delay:.1s">
+      <div class="exp-left">
+        <div class="exp-dot"></div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Data Analytics Intern</div>
+            <div class="exp-company"><i class="fa-solid fa-building"></i> XM Technologies · Surat, India</div>
+          </div>
+          <div class="exp-date">Jan 2022 — Jun 2022</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Prepared, cleaned, and validated structured datasets from multiple sources to support recurring analytics and reporting workflows.</li>
+          <li>Improved Excel-based workflows and assisted in database updates, ensuring data accuracy and cross-system consistency.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Data Preparation</span><span class="exp-tag">SQL</span><span class="exp-tag">Excel</span><span class="exp-tag">Reporting</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="sec-header reveal">
+    <span class="sec-num">04</span>
+    <h2 class="sec-title">education</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="edu-grid">
+
+    <div class="edu-card reveal">
+      <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+      <div class="edu-body">
+        <div class="edu-degree">Master of Data Science & Analytics</div>
+        <div class="edu-school"><i class="fa-solid fa-location-dot"></i> University of Calgary · Calgary, Canada</div>
+        <div class="edu-meta">
+          <span class="edu-date"><i class="fa-regular fa-calendar"></i> Sep 2024 — Sep 2025</span>
+          <span class="edu-gpa"><i class="fa-solid fa-star"></i> GPA 3.92 / 4.0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-card reveal" style="transition-delay:.1s">
+      <div class="edu-icon"><i class="fa-solid fa-laptop-code"></i></div>
+      <div class="edu-body">
+        <div class="edu-degree">Bachelor of Computer Science</div>
+        <div class="edu-school"><i class="fa-solid fa-location-dot"></i> Gujarat Technological University · Gujarat, India</div>
+        <div class="edu-meta">
+          <span class="edu-date"><i class="fa-regular fa-calendar"></i> Jul 2018 — Apr 2022</span>
+          <span class="edu-gpa"><i class="fa-solid fa-star"></i> GPA 3.55 / 4.0</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
   <div class="sec-header reveal">
-    <span class="sec-num">03</span>
+    <span class="sec-num">05</span>
     <h2 class="sec-title">projects</h2>
     <div class="sec-line"></div>
   </div>
@@ -377,7 +509,7 @@ footer{padding:28px 80px;border-top:1px solid var(--border);display:flex;justify
 <!-- CONTACT -->
 <section id="contact">
   <div class="sec-header reveal">
-    <span class="sec-num">04</span>
+    <span class="sec-num">06</span>
     <h2 class="sec-title">contact</h2>
     <div class="sec-line"></div>
   </div>
@@ -443,14 +575,30 @@ const HIDDEN_REPOS    = ['utsav4463.github.io','utsavgoti.github.io'];
 // These always show on your portfolio regardless of GitHub visibility.
 // Copy the block below for each private project and fill in your details.
 const MANUAL_PROJECTS = [
-  // {
-  //   name: 'Your Project Name',
-  //   description: 'One sentence describing what this project does.',
-  //   language: 'Python',
-  //   githubUrl: '',   // leave blank if private
-  //   liveUrl: '',     // leave blank if no demo
-  //   updatedAt: '2025-01-01'
-  // },
+  {
+    name: 'QuantEdgeX: AI Trading & Risk Intelligence',
+    description: 'Real-time AI-driven trading system using LSTM, XGBoost, and FinBERT integrated with Azure pipelines and dashboards for live monitoring and decision support.',
+    language: 'Python',
+    githubUrl: 'https://github.com/utsav4463',
+    liveUrl: '',
+    updatedAt: '2024-12-01'
+  },
+  {
+    name: 'Corporate Energy Consumption Analysis',
+    description: 'Analyzed large-scale Calgary energy datasets using Python, SQL, and Tableau to identify trends, optimize resource usage, and support data-driven sustainability decisions.',
+    language: 'Python',
+    githubUrl: '',
+    liveUrl: '',
+    updatedAt: '2024-10-01'
+  },
+  {
+    name: 'Fraud Patterns & Financial Impact in Canada',
+    description: 'Applied time-series analysis and anomaly detection to identify fraud patterns across Canadian financial data, enabling risk insights and data-driven reporting.',
+    language: 'Python',
+    githubUrl: '',
+    liveUrl: '',
+    updatedAt: '2024-09-01'
+  },
 ];
 
 const REPO_ICONS = {
